@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ночь в музее — конструктор посещения</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <article class="event-card">
+      <p class="eyebrow">Конструктор посещения события</p>
+      <h1 id="event-title">Ночь в музее</h1>
+      <p class="event-date">15 ноября, 18:30</p>
+      <p>Музей космонавтики, проспект Мира, 111</p>
+      <p class="description">Вечерняя программа с выставкой и экскурсиями</p>
+      <button id="show-program" type="button" aria-controls="program" aria-expanded="false">Показать программу</button>
+      <div id="program" class="program" hidden></div>
+    </article>
+
+    <p id="data-error" class="error" role="alert" hidden></p>
+
+    <form id="service-form" class="service-card" hidden>
+      <h2>Дополните свой вечер</h2>
+      <p class="description">Выберите услуги, чтобы рассчитать стоимость.</p>
+      <fieldset>
+        <legend>Дополнительные услуги</legend>
+        <label class="service-option" for="guide">
+          <input id="guide" name="guide" type="checkbox">
+          Экскурсия с гидом <span class="price">— 500 руб.</span>
+        </label>
+        <label class="service-option" for="audio">
+          <input id="audio" name="audio" type="checkbox">
+          Аудиогид <span class="price">— 350 руб.</span>
+        </label>
+        <label class="service-option" for="catalog">
+          <input id="catalog" name="catalog" type="checkbox">
+          Каталог выставки <span class="price">— 250 руб.</span>
+        </label>
+      </fieldset>
+      <button type="submit">Рассчитать стоимость</button>
+    </form>
+
+    <p id="choice-error" class="error" role="alert" hidden></p>
+    <div id="result" class="result" aria-live="polite" hidden></div>
+    <pre id="report-json" class="json-report" aria-label="Отчёт в формате JSON" hidden></pre>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
